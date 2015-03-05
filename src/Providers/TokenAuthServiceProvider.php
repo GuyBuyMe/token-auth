@@ -1,4 +1,6 @@
-<?php namespace Igorgoroshit\TokenAuth;
+<?php 
+
+namespace Igorgoroshit\TokenAuth\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

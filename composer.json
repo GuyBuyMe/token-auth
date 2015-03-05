@@ -1,5 +1,5 @@
 {
-    "name": "igorgoroshit/tokenauth",
+    "name": "igorgoroshit/token-auth",
     "description": "",
     "authors": [
         {
@@ -15,9 +15,11 @@
     
     "autoload": {
 
-        "psr-0": {
-            "Igorgoroshit\\TokenAuth\\": "src/"
+        "psr-4": {
+            "Igorgoroshit\\TokenAuth\\": "src"
         }
+
     },
+
     "minimum-stability": "stable"
 }
