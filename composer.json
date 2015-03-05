@@ -1,0 +1,23 @@
+{
+    "name": "igorgoroshit/tokenauth",
+    "description": "",
+    "authors": [
+        {
+            "name": "Igor Goroshit",
+            "email": "igor@webt.co.il"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "tymon/jwt-auth": "*"
+    },
+    
+    "autoload": {
+
+        "psr-0": {
+            "Igorgoroshit\\TokenAuth\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
