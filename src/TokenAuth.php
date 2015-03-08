@@ -10,4 +10,11 @@ class TokenAuth extends \Tymon\JWTAuth\JWTAuth
     $token =  $this->encode($payload)->get();
     return $token;
 	}
+
+	public function sub()
+	{
+		$token = $this->getToken();
+		$payload = $this->getPayload($token);
+		return $payload['sub'];
+	}
 }
