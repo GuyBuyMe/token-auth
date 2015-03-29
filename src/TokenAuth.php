@@ -2,6 +2,8 @@
 
 namespace Igorgoroshit\TokenAuth;
 
+
+
 class TokenAuth extends \Tymon\JWTAuth\JWTAuth
 {
 	public function make($subject, $claims = array()) 

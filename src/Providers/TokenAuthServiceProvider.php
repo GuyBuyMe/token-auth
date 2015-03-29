@@ -7,6 +7,8 @@ use Igorgoroshit\TokenAuth\TokenAuth;
 
 class TokenAuthServiceProvider extends \Tymon\JWTAuth\Providers\JWTAuthServiceProvider {
 
+    protected $ttl = 720;
+
 	  protected function bootBindings()
     {
     	parent::bootBindings();
@@ -26,6 +28,15 @@ class TokenAuthServiceProvider extends \Tymon\JWTAuth\Providers\JWTAuthServicePr
     	parent::register();
 
     	$this->registerTokenAuth();
+    }
+
+    protected function registerPayloadFactory()
+    {
+        $this->app['tymon.jwt.payload.factory'] = $this->app->share(function ($app) {
+            $factory = new \Tymon\JWTAuth\PayloadFactory($app['tymon.jwt.claim.factory'], $app['request'], $app['tymon.jwt.validators.payload']);
+            
+            return $factory->setTTL($this->ttl);
+        });
     }
 		/**
 		* Register the bindings for the main JWTAuth class
